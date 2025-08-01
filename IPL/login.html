@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Crop Price Prediction</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('gif.gif') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .login-container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.85);
+            width: 300px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        #loginButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+        }
+        #loginButton:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Welcome to Crop Price Prediction</h1>
+        <form id="loginForm" action="index.html">
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            <button id="loginButton" type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            // Prevent form from submitting immediately
+            event.preventDefault();
+
+            // Get values from the input fields
+            const name = document.getElementById("name").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            // Validation conditions
+            if (name === "") {
+                alert("Please enter your name.");
+                return;
+            }
+
+            // If all conditions are met, submit the form
+            alert("Login successful!");
+            document.getElementById("loginForm").submit();
+        });
+    </script>
+</body>
+</html>
